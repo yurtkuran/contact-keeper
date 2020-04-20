@@ -6,12 +6,16 @@ const connectDB = require('./config/db');
 // clear console
 console.clear();
 
-// initalize app
-const app = express();
-
 // connect to database
 connectDB();
 
+// initalize app
+const app = express();
+
+// body parser middleware
+app.use(express.json({ extended: false }));
+
+// inital route
 app.get('/', (req, res) => res.json({ msg: 'Welcome to the ContactKeeper API...' }));
 
 // define routes
