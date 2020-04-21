@@ -1,6 +1,6 @@
 #dependencies
 node_modules/
-/.pnp
+/client/.pnp
 .pnp.js
 
 #config files
@@ -21,7 +21,7 @@ node_modules/
 /client/.env.production.local
 
 # testing
-/client//coverage
+/client/coverage
 
 # production
 /client/build
