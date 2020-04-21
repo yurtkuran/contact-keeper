@@ -35,7 +35,7 @@ router.post('/', [newUserValidation], async (req, res) => {
             let user = await User.findOne({ email });
             if (user) {
                 // user exists
-                return res.status(400).json({ msg: 'User already exists' });
+                return res.status(400).json({ msg: 'user already exists' });
             } else {
                 // new user
                 user = new User({
