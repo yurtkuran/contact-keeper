@@ -21,7 +21,7 @@ const ContactSchema = mongoose.Schema({
     },
     date: {
         type: Date,
-        defaulte: Date.now,
+        default: Date.now,
     },
 });
 

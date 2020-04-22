@@ -42,7 +42,6 @@ const AuthState = (props) => {
             loadUser();
         } catch (error) {
             dispatch({ type: REGISTER_FAIL, payload: error.response.data.msg });
-            console.error(error);
         }
     };
 
@@ -59,7 +58,6 @@ const AuthState = (props) => {
             loadUser();
         } catch (error) {
             dispatch({ type: LOGIN_FAIL, payload: error.response.data.msg });
-            console.error(error);
         }
     };
 
