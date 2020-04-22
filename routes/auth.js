@@ -14,10 +14,7 @@ const auth = require('../middleware/auth');
 const { check, validationResult } = require('express-validator');
 
 // user validation
-const userValidation = [
-    check('email', 'Please include a valid email').isEmail(),
-    check('password', 'Password is required').exists(),
-];
+const userValidation = [check('email', 'Please include a valid email').isEmail(), check('password', 'Password is required').exists()];
 
 // @route   GET api/auth
 // @desc    Get a logged in user
@@ -50,13 +47,13 @@ router.post('/', [userValidation], async (req, res) => {
 
             // verify valid user
             if (!user) {
-                return res.status(400).json({ msg: 'invalid credentials' });
+                return res.status(401).json({ msg: 'invalid credentials' });
             }
 
             // verify user password
             const isMatch = await bcrypt.compare(password, user.password);
             if (!isMatch) {
-                return res.status(400).json({ msg: 'invalid credentials' });
+                return res.status(401).json({ msg: 'invalid credentials' });
             }
 
             // return JWT token

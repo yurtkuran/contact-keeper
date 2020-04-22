@@ -47,10 +47,24 @@ const AuthState = (props) => {
     };
 
     // login user
-    const login = () => {};
+    const login = async (formData) => {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+        try {
+            const res = await axios.post('/api/auth', formData, config);
+            dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+            loadUser();
+        } catch (error) {
+            dispatch({ type: LOGIN_FAIL, payload: error.response.data.msg });
+            console.error(error);
+        }
+    };
 
     // logout
-    const logout = () => {};
+    const logout = () => dispatch({ type: LOGOUT });
 
     // clear errors
     const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
