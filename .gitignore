@@ -4,7 +4,7 @@ node_modules/
 .pnp.js
 
 #config files
-/config/production.json
+#/config/production.json
 /config/default.json
 
 

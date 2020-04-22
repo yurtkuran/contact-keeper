@@ -30,7 +30,11 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 
     // set default 'route'
+<<<<<<< 2d50616acb3d908ba83e2052f7e0af94542091a7
     app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', index.html)));
+=======
+    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
+>>>>>>> prepare to deploy
 }
 
 const PORT = process.env.PORT || 5000;
