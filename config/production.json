@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://yurtkuran:1candy@codaffectioncrud-dvnxs.mongodb.net/test?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://yurtkuran:dPPZ2H759xDJNTJM@codaffectioncrud.otwih9s.mongodb.net/?appName=CodAffectionCRUD?retryWrites=true&w=majority",
     "jwtSecret": "secret"
 }
